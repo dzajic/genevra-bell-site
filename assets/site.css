@@ -219,6 +219,37 @@ button, input, textarea { font: inherit; }
 .site-bell .contact-page .text-link { margin: 0; font-family: Arial, Helvetica, sans-serif; }
 .site-bell .site-footer { padding: 70px 51px 35px; font-size: 15px; }
 
+.site-bell .portfolio-pagination {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+  padding: 3vw 4vw;
+}
+.site-bell .portfolio-pagination-link {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  color: #000;
+  text-decoration: none;
+}
+.site-bell .portfolio-pagination-link.next {
+  grid-column: 2;
+  justify-content: flex-end;
+  text-align: right;
+}
+.site-bell .pagination-title {
+  font-family: "Iowan Old Style", Baskerville, "Times New Roman", serif;
+  font-size: 28.672px;
+  line-height: 1;
+  font-weight: 400;
+}
+.site-bell .pagination-arrow {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 46px;
+  line-height: .65;
+  font-weight: 200;
+}
+
 @media (max-width: 767px) {
   .site-bell .site-header { height: auto; min-height: 88px; padding: 20px; }
   .site-bell .brand { font-size: 28px; }
@@ -232,4 +263,8 @@ button, input, textarea { font: inherit; }
   .site-bell .about-page img { width: 207px; height: 207px; }
   .site-bell .contact-page { padding: 32px 20px; }
   .site-bell .contact-page h1 { font-size: 48px; line-height: 1.1; }
+  .site-bell .portfolio-pagination { padding: 26px 20px; }
+  .site-bell .portfolio-pagination-link { gap: 12px; }
+  .site-bell .pagination-title { font-size: 22px; }
+  .site-bell .pagination-arrow { font-size: 36px; }
 }
