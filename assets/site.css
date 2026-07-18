@@ -91,7 +91,7 @@ button, input, textarea { font: inherit; }
 .site-bell .retail-links { display: flex; flex-wrap: wrap; gap: .7rem 1.5rem; }
 .site-bell .retail-links a { text-underline-offset: .25em; }
 
-@media (max-width: 900px) {
+@media (max-width: 767px) {
   .site-header { min-height: 5rem; flex-wrap: wrap; }
   .menu-toggle { display: block; }
   .site-nav { display: none; width: 100%; margin: 0; flex-direction: column; align-items: stretch; gap: 0; padding: 1rem 0; }
@@ -114,3 +114,122 @@ button, input, textarea { font: inherit; }
 }
 
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+/* Squarespace-match pass */
+.site-bell { font-family: Arial, Helvetica, sans-serif; }
+.site-bell .site-header {
+  height: 121px;
+  min-height: 121px;
+  padding: 0 51px;
+  align-items: center;
+}
+.site-bell .brand,
+.site-bell .site-nav,
+.site-bell .page-title h1,
+.site-bell .work-card span,
+.site-bell .about-page h1,
+.site-bell .contact-page h1,
+.site-bell .contact-page h3,
+.site-bell .site-footer { font-family: "Iowan Old Style", Baskerville, "Times New Roman", serif; }
+.site-bell .brand { font-size: 31.36px; line-height: 1.4; font-weight: 400; }
+.site-bell .site-nav { gap: 17px; font-size: 17px; }
+.site-bell .work-index {
+  padding: 42px 51px 40px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 70px 90px;
+}
+.site-bell .work-card { gap: 16px; font-size: 19px; }
+.site-bell .work-card img { width: 100%; aspect-ratio: 4 / 3; object-fit: contain; }
+.site-bell .portfolio-page { position: relative; }
+.site-bell .portfolio-page .page-title { padding: 42px 51px 75px; }
+.site-bell .portfolio-page .page-title h1 {
+  font-size: 43.648px;
+  line-height: 57px;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+.site-bell .portfolio-page .art-grid {
+  display: flex;
+  gap: 0;
+  padding: 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: none;
+  align-items: flex-start;
+}
+.site-bell .portfolio-page .art-grid::-webkit-scrollbar { display: none; }
+.site-bell .portfolio-page .gallery-item {
+  flex: 0 0 auto;
+  width: auto;
+  margin: 0;
+}
+.site-bell .portfolio-page .artwork-button { width: auto; height: 100%; }
+.site-bell .portfolio-page .artwork-button img { width: auto; height: 100%; max-width: none; object-fit: contain; }
+.site-bell .portfolio-page figcaption { display: none; }
+.site-bell .gallery-control {
+  position: absolute;
+  top: 50%;
+  z-index: 3;
+  translate: 0 -20%;
+  border: 0;
+  background: rgb(255 255 255 / .88);
+  color: #111;
+  padding: 1rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+.site-bell .gallery-control-prev { left: 18px; }
+.site-bell .gallery-control-next { right: 18px; }
+
+.site-bell .gallery-control {
+  padding: 12px;
+  border: 0;
+  background: transparent;
+  font-size: 18px;
+}
+
+/* Scenes uses the single-image slideshow; the other sections use a horizontal reel. */
+.site-bell.page-work-scenes .art-grid { height: 540px; justify-content: center; }
+.site-bell.page-work-scenes .gallery-item { display: none; height: 540px; }
+.site-bell.page-work-scenes .gallery-item.is-active { display: block; }
+.site-bell.page-work-characters .art-grid { height: 438px; }
+.site-bell.page-work-characters .gallery-item { height: 438px; }
+.site-bell.page-work-productdesign .art-grid,
+.site-bell.page-work-textiledesign .art-grid,
+.site-bell.page-work-print .art-grid { height: 258px; }
+.site-bell.page-work-productdesign .gallery-item,
+.site-bell.page-work-textiledesign .gallery-item,
+.site-bell.page-work-print .gallery-item { height: 258px; }
+
+.site-bell .about-page {
+  min-height: 540px;
+  padding: 42px 40px 60px;
+  display: grid;
+  grid-template-columns: 207px minmax(0, 590px);
+  gap: 64px;
+  align-items: start;
+}
+.site-bell .about-page figure { width: 207px; }
+.site-bell .about-page img { width: 207px; height: 207px; object-fit: cover; }
+.site-bell .about-page h1 { margin: 0 0 22px; font-size: 31.36px; line-height: 1.3; font-weight: 400; }
+.site-bell .about-page p { margin: 0 0 18px; max-width: 590px; font-size: 16px; line-height: 1.55; }
+.site-bell .contact-page { max-width: none; min-height: 540px; padding: 42px 51px 60px; }
+.site-bell .contact-page h1 { margin: 0 0 48px; font-size: 62.08px; line-height: 76px; font-weight: 400; letter-spacing: 0; }
+.site-bell .contact-page h3 { margin: 0 0 18px; font-size: 30px; font-weight: 400; }
+.site-bell .contact-page .text-link { margin: 0; font-family: Arial, Helvetica, sans-serif; }
+.site-bell .site-footer { padding: 70px 51px 35px; font-size: 15px; }
+
+@media (max-width: 767px) {
+  .site-bell .site-header { height: auto; min-height: 88px; padding: 20px; }
+  .site-bell .brand { font-size: 28px; }
+  .site-bell .work-index { grid-template-columns: 1fr; gap: 48px; padding: 32px 20px; }
+  .site-bell .portfolio-page .page-title { padding: 32px 20px 45px; }
+  .site-bell .portfolio-page .page-title h1 { font-size: 36px; line-height: 1.15; }
+  .site-bell .portfolio-page .art-grid { height: 58vw !important; min-height: 260px; }
+  .site-bell .portfolio-page .gallery-item { height: 58vw !important; min-height: 260px; }
+  .site-bell .about-page { grid-template-columns: 1fr; gap: 30px; padding: 32px 20px; }
+  .site-bell .about-page figure,
+  .site-bell .about-page img { width: 207px; height: 207px; }
+  .site-bell .contact-page { padding: 32px 20px; }
+  .site-bell .contact-page h1 { font-size: 48px; line-height: 1.1; }
+}

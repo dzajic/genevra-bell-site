@@ -44,3 +44,25 @@ document.querySelector('[data-preview-form]')?.addEventListener('submit', (event
   event.preventDefault();
   event.currentTarget.querySelector('.form-note').textContent = 'Form delivery will be connected before launch.';
 });
+
+document.querySelectorAll('.portfolio-page').forEach((section) => {
+  const grid = section.querySelector('.art-grid');
+  const previous = section.querySelector('.gallery-control-prev');
+  const next = section.querySelector('.gallery-control-next');
+  if (!grid || (!previous && !next)) return;
+
+  if (grid.hasAttribute('data-slideshow')) {
+    const items = [...grid.querySelectorAll('.gallery-item')];
+    let current = Math.max(0, items.findIndex((item) => item.classList.contains('is-active')));
+    const show = (index) => {
+      items[current]?.classList.remove('is-active');
+      current = (index + items.length) % items.length;
+      items[current]?.classList.add('is-active');
+    };
+    previous?.addEventListener('click', () => show(current - 1));
+    next?.addEventListener('click', () => show(current + 1));
+  } else {
+    previous?.addEventListener('click', () => grid.scrollBy({ left: -grid.clientWidth * .75, behavior: 'smooth' }));
+    next?.addEventListener('click', () => grid.scrollBy({ left: grid.clientWidth * .75, behavior: 'smooth' }));
+  }
+});
