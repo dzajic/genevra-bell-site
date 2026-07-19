@@ -1,0 +1,7 @@
+{% extends "layouts/base.njk" %}
+{% block main %}
+<section class="about-page">
+  <figure><img src="{{ portrait }}" alt="Genevra Bell"></figure>
+  <div><h1>{{ title }}</h1>{{ content | safe }}</div>
+</section>
+{% endblock %}

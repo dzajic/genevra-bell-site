@@ -1,14 +1,29 @@
 # Genevra Bell portfolio
 
-Static recreation of [genevrabell.com](https://genevrabell.com), prepared for GitHub Pages.
+Markdown-powered recreation of [genevrabell.com](https://genevrabell.com), prepared for GitHub Pages.
+
+## Editing the site
+
+Page content and artwork lists live in `src/pages/`. Shared page structure is
+in `src/_includes/`, all styling is in `src/assets/site.css`, and carousel
+behavior is in `src/assets/site.js`.
 
 ## Preview locally
 
 ```sh
-python3 -m http.server 8000
+pnpm install
+pnpm dev
 ```
 
-Then open `http://localhost:8000`.
+Eleventy prints the local preview address and automatically rebuilds changes.
+
+## Build and verify
+
+```sh
+pnpm validate
+```
+
+The generated static website is written to `_site/`.
 
 ## Before publishing
 

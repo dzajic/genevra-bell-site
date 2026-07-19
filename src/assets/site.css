@@ -268,3 +268,48 @@ button, input, textarea { font: inherit; }
   .site-bell .pagination-title { font-size: 22px; }
   .site-bell .pagination-arrow { font-size: 36px; }
 }
+
+/* Shared Markdown carousel component */
+.site-bell .carousel { outline: none; }
+.site-bell .carousel-viewport { overflow: hidden; }
+.site-bell .carousel .carousel-track {
+  display: flex;
+  padding: 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  overscroll-behavior-x: contain;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+.site-bell .carousel .carousel-track::-webkit-scrollbar { display: none; }
+.site-bell .carousel .carousel-slide {
+  display: block;
+  flex: 0 0 auto;
+  width: auto;
+  margin: 0;
+  scroll-snap-align: start;
+}
+.site-bell .carousel .carousel-slide img {
+  display: block;
+  width: auto;
+  max-width: none;
+  height: 100%;
+  object-fit: contain;
+}
+.site-bell .carousel-single .carousel-track { height: 540px; }
+.site-bell .carousel-single .carousel-slide {
+  display: flex !important;
+  flex: 0 0 100%;
+  width: 100%;
+  height: 540px;
+  align-items: center;
+  justify-content: center;
+}
+.site-bell .carousel-single .carousel-slide img { max-width: 100%; }
+.site-bell .carousel .gallery-control { display: block; }
+
+@media (max-width: 767px) {
+  .site-bell .carousel-single .carousel-track,
+  .site-bell .carousel-single .carousel-slide { height: 58vw !important; min-height: 260px; }
+}

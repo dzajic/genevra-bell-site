@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ title }} — Genevra Bell</title>
+  <meta name="description" content="Genevra Bell — illustrator portfolio">
+  <link rel="stylesheet" href="/assets/site.css">
+  <script defer src="/assets/site.js"></script>
+</head>
+<body class="site-bell {{ pageClass }}">
+  <a class="skip-link" href="#content">Skip to content</a>
+  {% include "partials/header.njk" %}
+  <main id="content">{% block main %}{{ content | safe }}{% endblock %}</main>
+  {% include "partials/footer.njk" %}
+</body>
+</html>

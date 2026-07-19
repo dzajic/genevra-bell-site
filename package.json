@@ -1,0 +1,13 @@
+{
+  "name": "genevra-bell-site",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "eleventy",
+    "dev": "eleventy --serve",
+    "validate": "eleventy && node scripts/validate-build.mjs && node scripts/test-carousel.mjs"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.6"
+  }
+}

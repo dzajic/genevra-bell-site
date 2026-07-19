@@ -1,0 +1,26 @@
+{% extends "layouts/base.njk" %}
+{% block main %}
+<section class="portfolio-page carousel carousel-{{ carouselMode }}" data-carousel tabindex="0" aria-label="{{ title }} artwork carousel">
+  <header class="page-title"><h1>{{ title }}</h1></header>
+  <div class="carousel-viewport">
+    <div class="art-grid carousel-track">
+      {% for image in images %}
+      <figure class="gallery-item carousel-slide {{ image.orientation }}" data-carousel-slide>
+        <img src="{{ image.src }}" alt="{{ image.alt }}"{% if not loop.first %} loading="lazy"{% endif %} decoding="async">
+      </figure>
+      {% endfor %}
+    </div>
+  </div>
+  {% if images.length > 1 %}
+  <button class="gallery-control gallery-control-prev" type="button" aria-label="Previous artwork">‹</button>
+  <button class="gallery-control gallery-control-next" type="button" aria-label="Next artwork">›</button>
+  <p class="visually-hidden" aria-live="polite" data-carousel-status></p>
+  {% endif %}
+</section>
+{% if previous or next %}
+<nav class="portfolio-pagination" aria-label="Portfolio navigation">
+  {% if previous %}<a class="portfolio-pagination-link previous" href="{{ previous.url }}"><span class="pagination-arrow" aria-hidden="true">‹</span><span class="pagination-title">{{ previous.title }}</span><span class="visually-hidden">Previous: {{ previous.title }}</span></a>{% endif %}
+  {% if next %}<a class="portfolio-pagination-link next" href="{{ next.url }}"><span class="pagination-title">{{ next.title }}</span><span class="pagination-arrow" aria-hidden="true">›</span><span class="visually-hidden">Next: {{ next.title }}</span></a>{% endif %}
+</nav>
+{% endif %}
+{% endblock %}

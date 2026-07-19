@@ -1,0 +1,12 @@
+{% extends "layouts/base.njk" %}
+{% block main %}
+<section class="work-index">
+  <h1 class="visually-hidden">Selected illustration work</h1>
+  {% for card in cards %}
+  <a class="work-card" href="{{ card.url }}">
+    <img src="{{ card.image }}" alt="{{ card.title }}">
+    <span>{{ card.title }}</span>
+  </a>
+  {% endfor %}
+</section>
+{% endblock %}
