@@ -40,6 +40,8 @@ jobs:
 
       - name: Build site
         run: pnpm run build
+        env:
+          ELEVENTY_PATH_PREFIX: /genevra-bell-site/
 
       - name: Configure Pages
         uses: actions/configure-pages@v5
